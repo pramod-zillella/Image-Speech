@@ -7,15 +7,15 @@ from gtts import gTTS
 import io
 
 def main():
-st.title("Image to Speech App")
+    st.title("Image to Speech App")
 
 # File uploader
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
-# Display the uploaded image
-image = Image.open(uploaded_file)
-st.image(image, caption='Uploaded Image', use_column_width=True)
+    # Display the uploaded image
+    image = Image.open(uploaded_file)
+    st.image(image, caption='Uploaded Image', use_column_width=True)
 
 # Extract text from image
 text = extract_text(image)
@@ -47,4 +47,4 @@ def text_to_speech(text):
     return fp.getvalue()
 
 if __name__ == "__main__":
-main()
+    main()
