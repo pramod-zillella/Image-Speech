@@ -32,19 +32,19 @@ st.audio(audio)
 
 def extract_text(image):
 # Use pytesseract to extract text
-return pytesseract.image_to_string(image, lang='tel') # 'tel' for Telugu
+    return pytesseract.image_to_string(image, lang='tel') # 'tel' for Telugu
 
 def translate_text(text):
-# Translate text to English
-translator = Translator()
-return translator.translate(text, dest='en').text
+    # Translate text to English
+    translator = Translator()
+    return translator.translate(text, dest='en').text
 
 def text_to_speech(text):
 # Convert text to speech
-tts = gTTS(text=text, lang='en')
-fp = io.BytesIO()
-tts.write_to_fp(fp)
-return fp.getvalue()
+    tts = gTTS(text=text, lang='en')
+    fp = io.BytesIO()
+    tts.write_to_fp(fp)
+    return fp.getvalue()
 
 if __name__ == "__main__":
 main()
